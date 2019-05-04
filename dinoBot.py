@@ -30,8 +30,8 @@ def main(cordinates):
                     offset += 8
                 else:
                     offset = 140
-                if airtime-0.01 > 0:
-                    airtime -= 0.084
+                if airtime-0.0084 > 0:
+                    airtime -= 0.0084
                 else:
                     airtime = 0
                 t = time.time()
