@@ -41,13 +41,12 @@ def main(cordinates):
 
         obstacle1_box = (cordinates['dino'][0] + 80, 155 + cordinates['topLeft'][1], cordinates['dino'][0] + 145 + offset, 156 + cordinates['topLeft'][1])
         ob1 = imageGrab(obstacle1_box)
-        print(ob1, offset, airtime)
         if ob1 > 1:
             pressSpace(airtime)
 
 if __name__ == "__main__":
     print("Please adjust the runner-canvas width to 600")
-    inStr = input("Please enter the top left cordinate: ")
+    inStr = input("Please enter the top left cordinate(Separate by blank): ")
     inStr = inStr.split()
     topLeft = (int(inStr[0]), int(inStr[1]))
     cordinates = {
