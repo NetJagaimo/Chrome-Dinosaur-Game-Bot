@@ -39,7 +39,7 @@ def main(cordinates):
                 offset += 2
                 t = time.time()
 
-        obstacle1_box = (cordinates['dino'][0] + 80, 325, cordinates['dino'][0] + 145 + offset, 326)
+        obstacle1_box = (cordinates['dino'][0] + 80, 155 + cordinates['topLeft'][1], cordinates['dino'][0] + 145 + offset, 156 + cordinates['topLeft'][1])
         ob1 = imageGrab(obstacle1_box)
         print(ob1, offset, airtime)
         if ob1 > 1:
@@ -52,7 +52,8 @@ if __name__ == "__main__":
     topLeft = (int(inStr[0]), int(inStr[1]))
     cordinates = {
         'replayBtn': (302 + topLeft[0], 116 + topLeft[1]),
-        'dino': (85 + topLeft[0], 121 + topLeft[1])
+        'dino': (85 + topLeft[0], 121 + topLeft[1]),
+        'topLeft': topLeft
     }
 
     input("Press enter to start...")
