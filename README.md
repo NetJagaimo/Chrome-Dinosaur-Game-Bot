@@ -1,5 +1,5 @@
 # 需求
-你需要先安裝pillow以及pyautogui套件
+你需要先安裝pillow、pyautogui以及mss套件
 
 # 如何使用
 1. 在chrome的網址列輸入"chrome://dino"打開遊戲
@@ -11,7 +11,7 @@
 使用顏色數量作為跳躍判斷的好處在於，不論是夜晚模式，或者是日夜交替時的漸層，它都可以處理。
 
 # Requirements
-You need to install "pillow" and "pyautogui" before run this program
+You need to install "pillow", "pyautogui" and "mss" before run this program
 
 # How to use
 1. Open your chrome and input "chrome://dino" to the address bar to open the game

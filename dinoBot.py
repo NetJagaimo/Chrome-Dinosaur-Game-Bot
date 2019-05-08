@@ -1,6 +1,7 @@
 from PIL import ImageGrab, Image
 import pyautogui
 import time
+import mss
 
 def startGame(cordinates):
     print("Start! press ctrl + c to terminate the program")
@@ -15,7 +16,9 @@ def pressSpace(airtime):
     pyautogui.keyDown('down')
 
 def imageGrab(box):
-    image = ImageGrab.grab(box)
+    with mss.mss() as sct:
+        sct_img = sct.grab(box)
+        image = Image.frombytes('RGB', sct_img.size, sct_img.bgra, 'raw', 'BGRX')
     grayImage = image.convert('L')
     return len(grayImage.getcolors())
 
@@ -39,7 +42,7 @@ def main(cordinates):
                 offset += 2
                 t = time.time()
 
-        obstacle1_box = (cordinates['dino'][0] + 80, 155 + cordinates['topLeft'][1], cordinates['dino'][0] + 145 + offset, 156 + cordinates['topLeft'][1])
+        obstacle1_box = {'top': 155 + cordinates['topLeft'][1], 'left': cordinates['dino'][0] + 80, 'width': 45 + offset, 'height': 1}
         ob1 = imageGrab(obstacle1_box)
         if ob1 > 1:
             pressSpace(airtime)
